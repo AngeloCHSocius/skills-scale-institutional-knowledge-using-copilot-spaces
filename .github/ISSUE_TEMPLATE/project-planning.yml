@@ -1,0 +1,78 @@
+name: "Project Planning"
+description: "Break down an approved initiative into an actionable plan with prioritized backlog and milestones."
+title: "[Project Planning]: "
+labels: ["project-management", "planning"]
+body:
+  - type: textarea
+    id: project_scope
+    attributes:
+      label: "Project Scope"
+      description: "Summarize the scope and key deliverables."
+      placeholder: "E.g., Redesign portal UI, migrate to new backend, implement analytics"
+    validations:
+      required: true
+
+  - type: textarea
+    id: backlog_summary
+    attributes:
+      label: "Backlog Summary"
+      description: "Provide a high-level summary of backlog items (details in linked project board)."
+      placeholder: "E.g., 25 user stories, 12 tech debt items, prioritized by value and dependency"
+    validations:
+      required: true
+
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: "Definition of Done (DoD)"
+      description: "What criteria must each item meet before it's considered complete?"
+      placeholder: "E.g., Code reviewed, tests pass, docs updated, accepted by PdM"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies & Integration Points"
+      description: "What external teams or systems are dependencies?"
+      placeholder: "E.g., Depends on API team delivery by Week 4, third-party service integration"
+
+  - type: textarea
+    id: milestones
+    attributes:
+      label: "Release Plan & Milestones"
+      description: "Define key milestones and target delivery dates."
+      placeholder: "E.g., M1 (Design finalized) - 2 weeks, M2 (MVP features) - 6 weeks, M3 (Launch) - 8 weeks"
+    validations:
+      required: true
+
+  - type: textarea
+    id: test_approach
+    attributes:
+      label: "Initial Test Plan / QA Approach"
+      description: "Outline the QA strategy and testing approach."
+      placeholder: "E.g., Unit tests (all code), integration tests (APIs), E2E tests (critical flows), manual QA for acceptance"
+    validations:
+      required: true
+
+  - type: textarea
+    id: resource_estimate
+    attributes:
+      label: "Resource Needs & Effort Estimate"
+      description: "Provide rough effort estimates and team composition."
+      placeholder: "E.g., 2 engineers (full-time), 1 QA (part-time), PM (15 hrs/wk), estimated 8 weeks total"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: planning_checklist
+    attributes:
+      label: "Planning Checklist"
+      description: "Confirm planning is complete:"
+      options:
+        - label: "Project kickoff held with stakeholders and delivery team"
+        - label: "Backlog prioritized and estimated"
+        - label: "Release timeline and milestones agreed"
+        - label: "Definition of Done documented"
+        - label: "Test plan / QA approach drafted"
+        - label: "Project board or repo created"

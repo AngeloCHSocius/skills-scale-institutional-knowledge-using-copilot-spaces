@@ -1,0 +1,70 @@
+name: "Retrospective Action Item"
+description: "Track an action item or improvement identified during retrospective."
+title: "[Retro Action]: "
+labels: ["project-management", "retrospective", "process-improvement"]
+body:
+  - type: textarea
+    id: action_title
+    attributes:
+      label: "Action Item Title"
+      description: "What is the improvement or action to take?"
+      placeholder: "E.g., Improve code review turnaround time, add automated accessibility testing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Why was this identified? What is the current state and desired state?"
+      placeholder: "E.g., Code reviews take 3+ days on average; goal is <24 hours. Need to rotate reviewers and set expectations."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      description: "What aspect of the project does this improve?"
+      options:
+        - Process
+        - Technical
+        - Communication
+        - Quality
+        - Team Experience
+    validations:
+      required: true
+
+  - type: textarea
+    id: owner
+    attributes:
+      label: "Owner"
+      description: "Who is responsible for driving this action item?"
+      placeholder: "E.g., @username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: due_date
+    attributes:
+      label: "Due Date"
+      description: "When should this be completed?"
+      placeholder: "E.g., 2024-02-28 or by end of next sprint"
+    validations:
+      required: true
+
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: "Success Criteria"
+      description: "How will we know this action item is complete and effective?"
+      placeholder: "E.g., Average review time <24 hrs, 80% of reviews completed within SLA"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Implementation Notes"
+      description: "Any details on how to execute this action?"
+      placeholder: "E.g., Create reviewer rotation doc, update PR guidelines, schedule team sync"

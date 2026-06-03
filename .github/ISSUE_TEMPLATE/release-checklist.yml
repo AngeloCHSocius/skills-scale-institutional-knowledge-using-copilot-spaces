@@ -1,0 +1,76 @@
+name: "Release Checklist"
+description: "Standardize pre-release validation and deployment verification for a production release."
+title: "[Release]: "
+labels: ["project-management", "release"]
+body:
+  - type: textarea
+    id: release_name
+    attributes:
+      label: "Release Name / Version"
+      description: "What is the version number or release name?"
+      placeholder: "E.g., v2.1.0 or Customer Portal MVP"
+    validations:
+      required: true
+
+  - type: textarea
+    id: release_summary
+    attributes:
+      label: "Release Summary"
+      description: "Brief description of what is included in this release."
+      placeholder: "E.g., Portal redesign, new analytics dashboard, performance improvements"
+    validations:
+      required: true
+
+  - type: textarea
+    id: release_date
+    attributes:
+      label: "Planned Release Date"
+      description: "When do we plan to release to production?"
+      placeholder: "E.g., 2024-02-15"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: pre_release
+    attributes:
+      label: "Pre-Release Requirements"
+      description: "Confirm all pre-release items are complete:"
+      options:
+        - label: "All acceptance criteria met and PRs merged"
+        - label: "Passing CI and security scans"
+        - label: "Release notes drafted"
+        - label: "Rollback / mitigation plan documented"
+        - label: "Smoke tests prepared and reviewed"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: deployment_checklist
+    attributes:
+      label: "Deployment Checklist"
+      description: "Confirm deployment steps:"
+      options:
+        - label: "Deployment window scheduled (if needed)"
+        - label: "Backup or snapshot completed (if applicable)"
+        - label: "Deployed to staging and smoke tests passed"
+        - label: "Deployed to production"
+        - label: "Post-deploy verifications passed"
+        - label: "Release announced to stakeholders and support"
+    validations:
+      required: true
+
+  - type: textarea
+    id: deployment_notes
+    attributes:
+      label: "Deployment Notes"
+      description: "Any special notes, migration steps, or known issues?"
+      placeholder: "E.g., Database migration required (see docs/migration.md), known issue with Safari on iOS"
+
+  - type: textarea
+    id: rollback_plan
+    attributes:
+      label: "Rollback Plan"
+      description: "Steps to roll back if critical issues arise post-deployment."
+      placeholder: "E.g., Run rollback script, restore database backup, notify stakeholders"
+    validations:
+      required: true

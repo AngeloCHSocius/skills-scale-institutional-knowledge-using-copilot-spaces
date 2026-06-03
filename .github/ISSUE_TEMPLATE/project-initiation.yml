@@ -1,0 +1,85 @@
+name: "Project Initiation"
+description: "Start a new project by validating business need, identifying stakeholders, and creating a lightweight plan."
+title: "[Project Initiation]: "
+labels: ["project-management", "initiation"]
+body:
+  - type: textarea
+    id: project_name
+    attributes:
+      label: "Project Name"
+      description: "What is the name of this project?"
+      placeholder: "E.g., Customer Portal Redesign"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: "Problem Statement"
+      description: "What problem or opportunity are we addressing?"
+      placeholder: "E.g., Current portal has low user adoption due to poor UX"
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: "Objective / Goal (SMART)"
+      description: "What is the specific, measurable outcome we want to achieve?"
+      placeholder: "E.g., Increase portal adoption by 25% within 6 months"
+    validations:
+      required: true
+
+  - type: textarea
+    id: success_metrics
+    attributes:
+      label: "Success Metrics"
+      description: "How will we measure success? What KPIs matter?"
+      placeholder: "E.g., User adoption rate, task completion time, NPS score"
+    validations:
+      required: true
+
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: "Primary Stakeholders"
+      description: "Who are the key stakeholders and sponsors?"
+      placeholder: "E.g., Product VP, Engineering Lead, Support Manager"
+    validations:
+      required: true
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: "Suggested Timeline / Milestones"
+      description: "What is the rough timeline and key milestones?"
+      placeholder: "E.g., Planning (2 wks) → Development (4 wks) → Beta (1 wk) → Launch (2 wks)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: "Quick Risks & Dependencies"
+      description: "What are initial risks or cross-team dependencies?"
+      placeholder: "E.g., Depends on backend API team, timeline risk if design feedback delayed"
+
+  - type: textarea
+    id: team
+    attributes:
+      label: "Proposed Team / Roles"
+      description: "Who will be involved? What roles are needed?"
+      placeholder: "E.g., PM, PdM, 3 Engineers, 1 QA, Designer"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: initiation_checklist
+    attributes:
+      label: "Initiation Checklist"
+      description: "Confirm the following before moving forward:"
+      options:
+        - label: "One-pager completed and reviewed by Product Lead"
+        - label: "Sponsor / Stakeholder alignment obtained"
+        - label: "Decision: Approve to move into planning?"
+        - label: "Team availability confirmed"

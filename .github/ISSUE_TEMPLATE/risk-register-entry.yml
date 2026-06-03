@@ -1,0 +1,75 @@
+name: "Risk Register Entry"
+description: "Log a risk or dependency in the project risk register with mitigation plan."
+title: "[Risk]: "
+labels: ["project-management", "risk"]
+body:
+  - type: textarea
+    id: risk_description
+    attributes:
+      label: "Risk Description"
+      description: "What is the risk or dependency?"
+      placeholder: "E.g., Third-party API may not be available by planned delivery date"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: "Impact Level"
+      description: "How severe would the impact be if this risk occurs?"
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: dropdown
+    id: likelihood
+    attributes:
+      label: "Likelihood"
+      description: "How likely is this risk to occur?"
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: "Mitigation Plan"
+      description: "What actions can we take to reduce or eliminate this risk?"
+      placeholder: "E.g., Establish regular check-ins with API team, create fallback implementation plan, spike on alternative solution"
+    validations:
+      required: true
+
+  - type: textarea
+    id: owner
+    attributes:
+      label: "Owner"
+      description: "Who is responsible for monitoring and executing mitigation?"
+      placeholder: "E.g., @username or team name"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: "Status"
+      description: "Current status of this risk."
+      options:
+        - Open
+        - In Progress
+        - Mitigated
+        - Resolved
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes & Updates"
+      description: "Any additional context or status updates."
+      placeholder: "E.g., Last checked on 2024-01-15, API team confirmed delivery on track"
